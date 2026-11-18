@@ -8,10 +8,11 @@ An original chess engine in 4 KB of Python for the [tiny-chess-01 bounty](https:
 
 ## The engine
 
-`main.py` (3,651 bytes) is the whole engine: a zlib+base64 compressed payload
-that unpacks and execs the readable engine (Python 3.13, stdlib only; it
-reads, imports or execs no other repo file). The readable source is kept
-outside the repo for reference.
+`main.py` (2,778 bytes) is the whole engine: an LZMA payload packed with
+the kit's official `makefun compress` that unpacks and execs the readable
+engine (Python 3.13, stdlib only; it reads, imports or execs no other repo
+file). The readable source (`main_readable.py`) is kept in the repo folder
+for reference; it is not committed.
 
 - 0x88 board, negamax alpha-beta with iterative deepening to a fixed
   100,000-node budget per move (never a clock — deterministic).
